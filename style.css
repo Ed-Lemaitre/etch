@@ -15,7 +15,7 @@ div.grid {
 
 div.grid div {
     height: 6vh;
-    background-color: brown;
+    /* background-color: brown; */
     box-sizing: border-box;
     border: 1px solid rgb(156, 150, 150);
     display: flex;
@@ -23,4 +23,9 @@ div.grid div {
 
 div.grid div div {
     width: 6vh;
+}
+
+.changeColor {
+    background-color: black;
+    transition: all 1s;
 }
