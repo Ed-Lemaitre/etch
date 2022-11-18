@@ -27,5 +27,7 @@ div.grid div div {
 
 .changeColor {
     background-color: black;
-    transition: all 1s;
+    /* transition-timing-function: ease-out; */
+    /* transition: all 0.5s; */
+    /* transition: 0.7s ease-in-out; */
 }

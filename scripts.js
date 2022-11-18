@@ -18,9 +18,9 @@ boxes.forEach((box) => {
     box.addEventListener('mouseover', addTransition);
 });
 
-boxes.forEach((box) => {
-    box.addEventListener('transitionend', removeTransition);
-});
+// boxes.forEach((box) => {
+//     box.addEventListener('transitionend', removeTransition);
+// });
 
 // const classBoxes = document.querySelectorAll('div.transition');
 
@@ -33,6 +33,6 @@ function addTransition(e) {
     this.classList.add('changeColor');
 }
 
-function removeTransition(e) {
-    this.classList.remove('changeColor');
-}
+// function removeTransition(e) {
+//     this.classList.remove('changeColor');
+// }
