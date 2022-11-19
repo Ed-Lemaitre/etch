@@ -7,27 +7,23 @@ div.grid {
     height: 96vh;
     width: 96vh;
     border: 3px solid rgb(196, 22, 22);
-    display: flex;
-    flex-direction: column;
     padding: 2px;
     margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 div.grid div {
-    height: 6vh;
-    /* background-color: brown; */
-    box-sizing: border-box;
-    border: 1px solid rgb(156, 150, 150);
     display: flex;
+    flex-basis: 100%;
 }
 
 div.grid div div {
-    width: 6vh;
+    display: flex;
+    flex-basis: 100%;
+    border: 1px solid rgb(156, 150, 150);
 }
 
 .changeColor {
     background-color: black;
-    /* transition-timing-function: ease-out; */
-    /* transition: all 0.5s; */
-    /* transition: 0.7s ease-in-out; */
 }
