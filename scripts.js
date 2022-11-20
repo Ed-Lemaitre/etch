@@ -1,38 +1,47 @@
 const mainDiv = document.querySelector('.grid');
-var divOutter = document.createElement('div');
-var divInner = document.createElement('div');
 
-for (i = 1; i <= 10; i++) {
-    divOutter.appendChild(divInner);
-    divInner = divInner.cloneNode(true);
+function drawGrid(userInput) {
+
+    if (userInput > 100) {
+        alert("Max size is 100 squares. Drawing with max value.")
+        userInput = 100;
+    }
+
+    var divOutter = document.createElement('div');
+    var divInner = document.createElement('div');
+
+    for (i = 1; i <= userInput; i++) {
+        divOutter.appendChild(divInner);
+        divInner = divInner.cloneNode(true);
+    }
+
+    for (j = 1; j <= userInput; j++) {
+        mainDiv.appendChild(divOutter);
+        divOutter = divOutter.cloneNode(true);
+    }
+    const boxes = document.querySelectorAll('div.grid div div');
+
+    boxes.forEach((box) => {
+        box.addEventListener('mouseover', addTransition);
+    });
 }
 
-for (i = 1; i <= 10; i++) {
-    mainDiv.appendChild(divOutter);
-    divOutter = divOutter.cloneNode(true);
+function removeDivs() {
+
+    var selec = document.querySelectorAll('div.grid div');
+    selec.forEach((d) => { d.remove() });
+
 }
-
-const boxes = document.querySelectorAll('div.grid div div');
-
-boxes.forEach((box) => {
-    box.addEventListener('mouseover', addTransition);
-});
-
-// boxes.forEach((box) => {
-//     box.addEventListener('transitionend', removeTransition);
-// });
-
-// const classBoxes = document.querySelectorAll('div.transition');
-
-// classBoxes.forEach((box) => {
-//     console.log("hola")
-//     box.addEventListener('transitionend', removeTransition);
-// });
 
 function addTransition(e) {
     this.classList.add('changeColor');
 }
 
-// function removeTransition(e) {
-//     this.classList.remove('changeColor');
-// }
+const button = document.querySelector('button');
+button.addEventListener('click', gridSize);
+
+function gridSize() {
+    userInput = prompt();
+    removeDivs();
+    drawGrid(userInput);
+}
